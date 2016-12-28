@@ -27,9 +27,10 @@ def convertTime():
     else:
         # Check if it's AM or PM
         if middaySection.lower() == "pm":
-            newHours = int(hours) + 12
-            if newHours == 24:
-                newHours = 0
+            if int(hours) == 12:
+                newHours = hours
+            else:
+                newHours = int(hours) + 12
         elif middaySection.lower() == "am":
             if int(hours) == 12:
                 newHours = 0
