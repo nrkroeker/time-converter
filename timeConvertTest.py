@@ -1,5 +1,4 @@
 # A program to receive an input of time in classic format and convert it to military format
-print("1.3.9")
 
 # Global variables
 classicTime = ""

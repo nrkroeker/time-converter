@@ -18,7 +18,7 @@ def convertTime():
     newHours = 0
 
     # Check for correct formatting
-    if int(hours) > 12 or int(hours) < 0:
+    if int(hours) > 12 or int(hours) <= 0:
         errorMessage("hour")
     elif int(minutes) > 59 or int(minutes) < 0:
         errorMessage("minute")
@@ -31,7 +31,10 @@ def convertTime():
             if newHours == 24:
                 newHours = 0
         elif middaySection.lower() == "am":
-            newHours = hours
+            if int(hours) == 12:
+                newHours = 0
+            else:
+                newHours = hours
         else:
             errorMessage("AM/PM")
 
